@@ -7,7 +7,7 @@ def depthScan( depths ):
             depthIncreased += 1
         i += 1
     
-    print("Depth Increase: " + str(depthIncreased))
+    return depthIncreased
 
-
-depthScan( [1,23,4,26,36,80,79,90])
+input = list( map( int , open( "/Users/dennisgauss/Documents/Coding/AdventOfCode2021/input_ex1.txt" ,"r").read().split('\n') ) )
+print( depthScan( input ) )
