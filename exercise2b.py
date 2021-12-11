@@ -1,4 +1,5 @@
 def calculatePosition( navigationCommands ):
+    aim = 0
     horizontalPosition = 0
     depth = 0
 
@@ -7,10 +8,11 @@ def calculatePosition( navigationCommands ):
 
         if commandVals[0] == 'forward':
             horizontalPosition += int(commandVals[1])
+            depth += aim * int(commandVals[1])
         elif commandVals[0] == 'up':
-            depth -= int(commandVals[1])
+            aim -= int(commandVals[1])
         else:
-            depth += int(commandVals[1])
+            aim += int(commandVals[1])
 
     print("Horizontal: " , str(horizontalPosition) , " Depth: " , str(depth))
 
