@@ -41,7 +41,7 @@ def countNumOverlaps(board):
 
 
 def determineOverlaps( input ):
-    board = [ [ int(0) for y in range( 1000 ) ] for x in range( 1000 ) ]
+    board = [ [ 0 for y in range( 1000 ) ] for x in range( 1000 ) ]
     lines = [ parseLine(line) for line in input ]
 
     for line in lines:
