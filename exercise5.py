@@ -1,11 +1,8 @@
 class Line:
     def __init__(self, start , end):
-        if end >= start:
-            self.start = [int(x) for x in start]
-            self.end = [int(x) for x in end]
-        else:
-            self.start = [int(x) for x in end]
-            self.end = [int(x) for x in start]
+
+        self.start = [int(x) for x in start]
+        self.end = [int(x) for x in end]
 
     def isVerticalOrHorizontal( self ):
         if self.start[0] != self.end[0] and self.start[1] != self.end[1]:
@@ -27,9 +24,17 @@ def markLineOnBoard(board, line):
     axis = line.getAxisToIterate( )
     temp = line.start.copy()
 
-    while temp[axis] <= line.end[axis]:
+    if temp[axis] > line.end[axis]:
+        iterations = temp[axis] - line.end[axis] + 1
+    else:
+        iterations = line.end[axis] - temp[axis] + 1
+
+    for x in range( iterations ):
         board[temp[0]][temp[1]] += 1
-        temp[axis] += 1
+        if line.end[axis] > temp[axis]:
+            temp[axis] += 1
+        else: 
+            temp[axis] -= 1
 
 def countNumOverlaps(board):
     result = 0
