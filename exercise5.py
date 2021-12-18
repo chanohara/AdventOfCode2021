@@ -29,7 +29,7 @@ def markLineOnBoard(board, line):
 
     while temp[axis] <= line.end[axis]:
         board[temp[0]][temp[1]] += 1
-        temp[axis] = temp[axis] + 1
+        temp[axis] += 1
 
 def countNumOverlaps(board):
     result = 0
