@@ -27,9 +27,9 @@ def markLineOnBoard(board, line):
     axis = line.getAxisToIterate( )
     temp = line.start.copy()
 
-    while int(temp[int(axis)]) <= int(line.end[int(axis)]):
+    while int(temp[axis]) <= int(line.end[axis]):
         board[int(temp[0])][int(temp[1])] += 1
-        temp[int(axis)] = int(temp[int(axis)]) + 1
+        temp[axis] = int(temp[axis]) + 1
 
 def countNumOverlaps(board):
     result = 0
