@@ -24,4 +24,4 @@ def createStartPop(input):
     return population
 
 input = open( "/Users/dennisgauss/Documents/Coding/AdventOfCode2021/input_ex6.txt" ,"r").read().split('\n')
-print( calculateFishPop(80,createStartPop(input)) )
+print( calculateFishPop(256,createStartPop(input)) )
